@@ -1,0 +1,35 @@
+.navbar{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:20px 30px;
+
+    background:#1e3a8a;
+    color:white;
+
+}
+
+
+.navbar-logo{
+
+    font-size:22px;
+    font-weight:bold;
+
+}
+
+
+.navbar-contador{
+
+    font-size:18px;
+
+}
+
+
+.navbar-contador strong{
+
+    margin-left:8px;
+    font-size:24px;
+
+}

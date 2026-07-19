@@ -1,0 +1,36 @@
+.jugador-card{
+
+    width:300px;
+    background:white;
+    border-radius:15px;
+    padding:20px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.15);
+    text-align:center;
+
+}
+
+
+.jugador-imagen{
+
+    width:180px;
+    height:180px;
+    object-fit:cover;
+    border-radius:50%;
+
+}
+
+
+.jugador-info h2{
+
+    color:#1e3a8a;
+    font-size:22px;
+
+}
+
+
+.jugador-info p{
+
+    color:#475569;
+    margin:8px;
+
+}
