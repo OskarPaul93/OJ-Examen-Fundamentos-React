@@ -1,35 +1,33 @@
 .navbar{
+    position:sticky;
+    top:0;
+    z-index:1000;
 
     display:flex;
     justify-content:space-between;
     align-items:center;
 
-    padding:20px 30px;
+    padding:18px 8%;
 
-    background:#1e3a8a;
+    background:var(--primary);
     color:white;
 
+    box-shadow:0 4px 12px rgba(0,0,0,.15);
 }
 
-
-.navbar-logo{
-
-    font-size:22px;
+.logo{
+    font-size:1.6rem;
     font-weight:bold;
-
+    letter-spacing:1px;
 }
 
+.contador{
+    background:var(--accent);
+    color:var(--text);
 
-.navbar-contador{
+    padding:8px 18px;
 
-    font-size:18px;
+    border-radius:30px;
 
-}
-
-
-.navbar-contador strong{
-
-    margin-left:8px;
-    font-size:24px;
-
+    font-weight:bold;
 }

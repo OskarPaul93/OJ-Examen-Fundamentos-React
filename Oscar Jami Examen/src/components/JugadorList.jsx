@@ -17,46 +17,57 @@ function JugadorList({ actualizarTotal }) {
     useEffect(() => {
 
 
-    async function cargarJugadores(){
+        async function cargarJugadores() {
 
-        try{
+            try {
 
-            const respuesta = await fetch(
-                "https://jugadores.up.railway.app/players"
-            );
+                const respuesta = await fetch(
+                    "https://jugadores.up.railway.app/players"
+                );
 
-            await new Promise(resolve => setTimeout(resolve, 3000));
-
-
-            const datos = await respuesta.json();
+                await new Promise(resolve => setTimeout(resolve, 300));
 
 
-            setJugadores(datos.data);
-
-            actualizarTotal(datos.data.length);
+                const datos = await respuesta.json();
 
 
-        }catch(error){
+                console.log(datos);
 
-            setError(error.message);
 
-        }finally{
+                if (!datos.data) {
 
-            setCargando(false);
+                    throw new Error("No se pudo obtener los jugadores");
+
+                }
+
+
+                setJugadores(datos.data);
+
+
+                actualizarTotal(datos.data.length);
+
+
+            } catch (error) {
+
+                setError(error.message);
+
+            } finally {
+
+                setCargando(false);
+
+            }
+
 
         }
 
 
-    }
+        cargarJugadores();
 
 
-    cargarJugadores();
+    }, []);
 
 
-}, []);
-
-
-    if(cargando){
+    if (cargando) {
 
         return <h2>Cargando jugadores...</h2>;
 
@@ -64,7 +75,7 @@ function JugadorList({ actualizarTotal }) {
 
 
 
-    if(error){
+    if (error) {
 
         return <h2>Error: {error}</h2>;
 
@@ -72,7 +83,7 @@ function JugadorList({ actualizarTotal }) {
 
 
 
-    if(jugadores.length===0){
+    if (jugadores.length === 0) {
 
         return <h2>No existen jugadores disponibles</h2>;
 
@@ -86,7 +97,7 @@ function JugadorList({ actualizarTotal }) {
 
 
             {
-                jugadores.map((jugador)=>(
+                jugadores.map((jugador) => (
 
 
                     <JugadorCard
